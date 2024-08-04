@@ -9,21 +9,37 @@
 /* Begin PBXBuildFile section */
 		FE23A0F82C551246006DBAD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A0F72C551246006DBAD0 /* AppDelegate.swift */; };
 		FE23A0FA2C551246006DBAD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A0F92C551246006DBAD0 /* SceneDelegate.swift */; };
-		FE23A0FC2C551246006DBAD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A0FB2C551246006DBAD0 /* ViewController.swift */; };
 		FE23A0FF2C551246006DBAD0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FE23A0FE2C551246006DBAD0 /* Base */; };
 		FE23A1012C551247006DBAD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE23A1002C551247006DBAD0 /* Assets.xcassets */; };
 		FE23A1042C551247006DBAD0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FE23A1032C551247006DBAD0 /* Base */; };
+		FE23A1112C55735E006DBAD0 /* SalahController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A1102C55735E006DBAD0 /* SalahController.swift */; };
+		FE23A1132C55736C006DBAD0 /* NewsEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A1122C55736C006DBAD0 /* NewsEventsController.swift */; };
+		FE23A1152C557378006DBAD0 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A1142C557378006DBAD0 /* CommunityController.swift */; };
+		FE23A1172C557382006DBAD0 /* DonationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A1162C557382006DBAD0 /* DonationController.swift */; };
+		FE23A1192C55738D006DBAD0 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A1182C55738D006DBAD0 /* SettingsController.swift */; };
+		FE23A11B2C5575B7006DBAD0 /* SalahCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A11A2C5575B7006DBAD0 /* SalahCell.swift */; };
+		FE23A11D2C5577C5006DBAD0 /* SalahModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A11C2C5577C5006DBAD0 /* SalahModel.swift */; };
+		FE23A11F2C558279006DBAD0 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A11E2C558279006DBAD0 /* MapController.swift */; };
+		FE23A1212C55A209006DBAD0 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A1202C55A209006DBAD0 /* LocalNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FE23A0F42C551246006DBAD0 /* CambourneCrescent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CambourneCrescent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE23A0F72C551246006DBAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE23A0F92C551246006DBAD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE23A0FB2C551246006DBAD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE23A0FE2C551246006DBAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE23A1002C551247006DBAD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE23A1032C551247006DBAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE23A1052C551247006DBAD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE23A1102C55735E006DBAD0 /* SalahController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahController.swift; sourceTree = "<group>"; };
+		FE23A1122C55736C006DBAD0 /* NewsEventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEventsController.swift; sourceTree = "<group>"; };
+		FE23A1142C557378006DBAD0 /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
+		FE23A1162C557382006DBAD0 /* DonationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationController.swift; sourceTree = "<group>"; };
+		FE23A1182C55738D006DBAD0 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		FE23A11A2C5575B7006DBAD0 /* SalahCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahCell.swift; sourceTree = "<group>"; };
+		FE23A11C2C5577C5006DBAD0 /* SalahModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahModel.swift; sourceTree = "<group>"; };
+		FE23A11E2C558279006DBAD0 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		FE23A1202C55A209006DBAD0 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,63 @@
 		FE23A0F62C551246006DBAD0 /* CambourneCrescent */ = {
 			isa = PBXGroup;
 			children = (
+				FE23A10B2C557329006DBAD0 /* Community */,
+				FE23A10E2C557329006DBAD0 /* Donation */,
+				FE23A10F2C557329006DBAD0 /* NewsEvents */,
+				FE23A10C2C557329006DBAD0 /* Salah */,
+				FE23A10D2C557329006DBAD0 /* Settings */,
 				FE23A0F72C551246006DBAD0 /* AppDelegate.swift */,
 				FE23A0F92C551246006DBAD0 /* SceneDelegate.swift */,
-				FE23A0FB2C551246006DBAD0 /* ViewController.swift */,
 				FE23A0FD2C551246006DBAD0 /* Main.storyboard */,
 				FE23A1002C551247006DBAD0 /* Assets.xcassets */,
 				FE23A1022C551247006DBAD0 /* LaunchScreen.storyboard */,
 				FE23A1052C551247006DBAD0 /* Info.plist */,
 			);
 			path = CambourneCrescent;
+			sourceTree = "<group>";
+		};
+		FE23A10B2C557329006DBAD0 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				FE23A1142C557378006DBAD0 /* CommunityController.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		FE23A10C2C557329006DBAD0 /* Salah */ = {
+			isa = PBXGroup;
+			children = (
+				FE23A1102C55735E006DBAD0 /* SalahController.swift */,
+				FE23A11A2C5575B7006DBAD0 /* SalahCell.swift */,
+				FE23A11C2C5577C5006DBAD0 /* SalahModel.swift */,
+				FE23A11E2C558279006DBAD0 /* MapController.swift */,
+				FE23A1202C55A209006DBAD0 /* LocalNotification.swift */,
+			);
+			path = Salah;
+			sourceTree = "<group>";
+		};
+		FE23A10D2C557329006DBAD0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FE23A1182C55738D006DBAD0 /* SettingsController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FE23A10E2C557329006DBAD0 /* Donation */ = {
+			isa = PBXGroup;
+			children = (
+				FE23A1162C557382006DBAD0 /* DonationController.swift */,
+			);
+			path = Donation;
+			sourceTree = "<group>";
+		};
+		FE23A10F2C557329006DBAD0 /* NewsEvents */ = {
+			isa = PBXGroup;
+			children = (
+				FE23A1122C55736C006DBAD0 /* NewsEventsController.swift */,
+			);
+			path = NewsEvents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +202,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE23A0FC2C551246006DBAD0 /* ViewController.swift in Sources */,
+				FE23A1192C55738D006DBAD0 /* SettingsController.swift in Sources */,
+				FE23A1172C557382006DBAD0 /* DonationController.swift in Sources */,
+				FE23A11D2C5577C5006DBAD0 /* SalahModel.swift in Sources */,
+				FE23A1132C55736C006DBAD0 /* NewsEventsController.swift in Sources */,
+				FE23A11B2C5575B7006DBAD0 /* SalahCell.swift in Sources */,
+				FE23A1112C55735E006DBAD0 /* SalahController.swift in Sources */,
+				FE23A1152C557378006DBAD0 /* CommunityController.swift in Sources */,
 				FE23A0F82C551246006DBAD0 /* AppDelegate.swift in Sources */,
+				FE23A11F2C558279006DBAD0 /* MapController.swift in Sources */,
+				FE23A1212C55A209006DBAD0 /* LocalNotification.swift in Sources */,
 				FE23A0FA2C551246006DBAD0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,11 +362,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F9CZL3QDPF;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F7FKQLB2H9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CambourneCrescent/Info.plist;
+				INFOPLIST_KEY_NSLocationUsageDescription = "Show user location on map";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Show user location on map";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -305,8 +381,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.CambourneCrescent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ring;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.ring";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,11 +396,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F9CZL3QDPF;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F7FKQLB2H9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CambourneCrescent/Info.plist;
+				INFOPLIST_KEY_NSLocationUsageDescription = "Show user location on map";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Show user location on map";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -333,8 +415,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.CambourneCrescent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ring;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.ring";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
