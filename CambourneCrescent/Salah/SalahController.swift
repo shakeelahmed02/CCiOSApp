@@ -95,8 +95,8 @@ class SalahController: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     private func getSalahTimingsFromRemote() async {
         let salahAPIURL = URL(string: "https://cambournecrescent.org/salah/index-app-json.php")!
-        guard let data = try? Data(contentsOf: salahAPIURL) else {
-            print("Salah local data not available")
+        guard let data = try? await URLSession.shared.data(for: URLRequest(url: salahAPIURL)).0 else {
+            print("SalahAPI not working")
             return
         }
         try? data.write(to: salahLocalDataURL, options: .atomic)
@@ -201,6 +201,6 @@ class SalahController: UIViewController, UITableViewDelegate, UITableViewDataSou
         let currentMonth = Calendar.current.component(.month, from: Date())
         let currentYear = Calendar.current.component(.year, from: Date())
         let key = "Salah-\(currentMonth)-\(currentYear)"
-        return documentsDirectory.appendingPathExtension(key)
+        return documentsDirectory.appending(path: key)
     }
 }
