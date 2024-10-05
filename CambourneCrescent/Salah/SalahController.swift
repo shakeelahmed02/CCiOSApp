@@ -12,24 +12,24 @@ class SalahController: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var tableView: UITableView!
     private var activity = UIActivityIndicatorView(style: .large)
     private var datasource = [SalahAPIResponse]()
+    private let maxNotificationLimit = 63
+    private var notificationsCount = 1
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        navigationItem.title = "Salah Timings"
+        navigationItem.title = "Salah"
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
-                print("All set!")
-            } else if let error {
+            if let error {
                 print(error.localizedDescription)
             }
         }
         addActivity()
         Task(priority: .background) {
-            await getSalahTimings()
-            await scheduleNotificaitons()
+            datasource = await Global.shared.getSalahTimings()
+            await LocalNotifications.shared.scheduleNotificaitons()
             Task { @MainActor in
                 tableView.reloadData()
                 activity.stopAnimating()
@@ -71,7 +71,7 @@ class SalahController: UIViewController, UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "SalahCell", for: indexPath) as! SalahCell
         let section = datasource[indexPath.section]
         let model = section.namaz[indexPath.row]
-        cell.nameLabel.text = model.name
+        cell.nameLabel.text = model.salahName(day: section.day)
         cell.venueLabel.text = model.loc.isEmpty ? "N/A" : "@\(model.loc)"
         cell.timeLabel.text = model.jamat.isEmpty ? model.start : model.jamat
         return cell
@@ -84,42 +84,6 @@ class SalahController: UIViewController, UITableViewDelegate, UITableViewDataSou
         }
     }
     
-    private func getSalahTimings() async {
-        guard let data = try? Data(contentsOf: salahLocalDataURL) else {
-            print("Salah local data not available")
-            await getSalahTimingsFromRemote()
-            return
-        }
-        decodeSalahData(data: data)
-    }
-    
-    private func getSalahTimingsFromRemote() async {
-        let salahAPIURL = URL(string: "https://cambournecrescent.org/salah/index-app-json.php")!
-        guard let data = try? await URLSession.shared.data(for: URLRequest(url: salahAPIURL)).0 else {
-            print("SalahAPI not working")
-            return
-        }
-        try? data.write(to: salahLocalDataURL, options: .atomic)
-        decodeSalahData(data: data)
-    }
-    
-    private func decodeSalahData(data: Data) {
-        guard let salahs = try? JSONDecoder().decode([SalahAPIResponse].self, from: data) else {
-            print("Could not decode data")
-            return
-        }
-        datasource = salahs.filter { model in
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd MMM"
-            guard let dateFromModel = dateFormatter.date(from: model.date) else {
-                print("Can't parse date")
-                return false
-            }
-            let salahDay = Calendar.current.component(.day, from: dateFromModel)
-            let today = Calendar.current.component(.day, from: Date())
-            return salahDay >= today
-        }
-    }
     
     // MARK: - Navigation
 
@@ -150,57 +114,5 @@ class SalahController: UIViewController, UITableViewDelegate, UITableViewDataSou
                 break
             }
         }
-    }
-    
-    private func scheduleNotificaitons() async {
-        LocalNotifications.shared.removeAllPendingNotifications()
-        LocalNotifications.shared.removeAllDeliveredNotifications()
-        for data in datasource {
-            let date = data.date
-            
-            guard let fajr = data.namaz.first(where: { $0.name.lowercased() == "fajr"}),
-                  let dhohr = data.namaz.first(where: { $0.name.lowercased() == "dhohr"}),
-                  let asr = data.namaz.first(where: { $0.name.lowercased() == "asr"}),
-                  let magrib = data.namaz.first(where: { $0.name.lowercased() == "magrib"}),
-                  let isha = data.namaz.first(where: { $0.name.lowercased() == "isha"}) else { continue }
-            
-            await scheduleNotificaiton(salah: fajr, salahDate: date)
-            await scheduleNotificaiton(salah: dhohr, salahDate: date)
-            await scheduleNotificaiton(salah: asr, salahDate: date)
-            await scheduleNotificaiton(salah: magrib, salahDate: date)
-            await scheduleNotificaiton(salah: isha, salahDate: date)
-        }
-    }
-
-    private func scheduleNotificaiton(salah: SalahModel, salahDate: String) async {
-        let currentYear = Calendar.current.component(.year, from: Date())
-        let salahTime = salah.jamat
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yyyy HH:mm"
-        dateFormatter.timeZone = TimeZone.current
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        let salahDateString = "\(salahDate) \(currentYear) \(salahTime)"
-        guard let salahDate = dateFormatter.date(from: salahDateString) else { return }
-        let salahNotTime = salahDate.timeIntervalSinceNow - 15*60
-        if salahNotTime > 0, !salah.loc.isEmpty {
-            try? await LocalNotifications.shared.scheduleNotification(
-                content: AnyNotificationContent(
-                    title: "\(salah.name) @\(salah.loc) in 15 mins",
-                    body: "حَيَّ عَلَىٰ ٱلْفَلَاحِ",
-                    sound: true,
-                    badge: nil
-                ),
-                trigger: .time(timeInterval: salahNotTime, repeats: false)
-            )
-        }
-    }
-
-    var salahLocalDataURL: URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        let currentMonth = Calendar.current.component(.month, from: Date())
-        let currentYear = Calendar.current.component(.year, from: Date())
-        let key = "Salah-\(currentMonth)-\(currentYear)"
-        return documentsDirectory.appending(path: key)
     }
 }

@@ -21,6 +21,7 @@
 		FE23A11D2C5577C5006DBAD0 /* SalahModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A11C2C5577C5006DBAD0 /* SalahModel.swift */; };
 		FE23A11F2C558279006DBAD0 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A11E2C558279006DBAD0 /* MapController.swift */; };
 		FE23A1212C55A209006DBAD0 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23A1202C55A209006DBAD0 /* LocalNotification.swift */; };
+		FEB2AAE82C67927400933DDB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB2AAE72C67927400933DDB /* Global.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FE23A11C2C5577C5006DBAD0 /* SalahModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahModel.swift; sourceTree = "<group>"; };
 		FE23A11E2C558279006DBAD0 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		FE23A1202C55A209006DBAD0 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
+		FEB2AAE72C67927400933DDB /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		FE23A0F62C551246006DBAD0 /* CambourneCrescent */ = {
 			isa = PBXGroup;
 			children = (
+				FEB2AAE62C67926D00933DDB /* Global */,
 				FE23A10B2C557329006DBAD0 /* Community */,
 				FE23A10E2C557329006DBAD0 /* Donation */,
 				FE23A10F2C557329006DBAD0 /* NewsEvents */,
@@ -129,6 +132,14 @@
 				FE23A1122C55736C006DBAD0 /* NewsEventsController.swift */,
 			);
 			path = NewsEvents;
+			sourceTree = "<group>";
+		};
+		FEB2AAE62C67926D00933DDB /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				FEB2AAE72C67927400933DDB /* Global.swift */,
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 				FE23A1112C55735E006DBAD0 /* SalahController.swift in Sources */,
 				FE23A1152C557378006DBAD0 /* CommunityController.swift in Sources */,
 				FE23A0F82C551246006DBAD0 /* AppDelegate.swift in Sources */,
+				FEB2AAE82C67927400933DDB /* Global.swift in Sources */,
 				FE23A11F2C558279006DBAD0 /* MapController.swift in Sources */,
 				FE23A1212C55A209006DBAD0 /* LocalNotification.swift in Sources */,
 				FE23A0FA2C551246006DBAD0 /* SceneDelegate.swift in Sources */,
@@ -362,11 +374,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F7FKQLB2H9;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = PFY43FQ5QQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CambourneCrescent/Info.plist;
 				INFOPLIST_KEY_NSLocationUsageDescription = "Show user location on map";
@@ -374,17 +385,17 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ring;
+				PRODUCT_BUNDLE_IDENTIFIER = camb.crescent.salah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.ring";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -396,11 +407,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F7FKQLB2H9;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = PFY43FQ5QQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CambourneCrescent/Info.plist;
 				INFOPLIST_KEY_NSLocationUsageDescription = "Show user location on map";
@@ -408,17 +418,17 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ring;
+				PRODUCT_BUNDLE_IDENTIFIER = camb.crescent.salah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.ring";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

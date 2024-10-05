@@ -37,6 +37,61 @@ final class LocalNotifications {
     private init() {}
     
     private let instance = UNUserNotificationCenter.current()
+    private let maxNotificationLimit = 63
+    private var notificationsCount = 1
+    
+    func scheduleNotificaitons() async {
+        LocalNotifications.shared.removeAllPendingNotifications()
+        LocalNotifications.shared.removeAllDeliveredNotifications()
+        notificationsCount = 1
+        let datasource = await Global.shared.getSalahTimings()
+        for data in datasource {
+            let date = data.date
+            
+            guard
+                let fajr = data.namaz.first(where: { $0.name.lowercased() == "fajr"}),
+                let dhohr = data.namaz.first(where: { $0.name.lowercased() == "dhohr"}),
+                let asr = data.namaz.first(where: { $0.name.lowercased() == "asr"}),
+                let magrib = data.namaz.first(where: { $0.name.lowercased() == "magrib"}),
+                let isha = data.namaz.first(where: { $0.name.lowercased() == "isha"}) else { continue }
+            
+            await scheduleNotificaiton(salah: fajr, salahDate: date)
+            await scheduleNotificaiton(salah: dhohr, salahDate: date)
+            await scheduleNotificaiton(salah: asr, salahDate: date)
+            await scheduleNotificaiton(salah: magrib, salahDate: date)
+            await scheduleNotificaiton(salah: isha, salahDate: date)
+        }
+        /* LocalNotifications.shared.getPendingNotificationRequests { nots in
+            for not in nots {
+                print("\(not.content.title) - \(not.trigger)")
+            }
+        }*/
+    }
+    
+    private func scheduleNotificaiton(salah: SalahModel, salahDate: String) async {
+        let currentYear = Calendar.current.component(.year, from: Date())
+        let salahTime = salah.jamat
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy HH:mm"
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        let salahDateString = "\(salahDate) \(currentYear) \(salahTime)"
+        guard let salahDate = dateFormatter.date(from: salahDateString) else { return }
+        let salahNotTime = salahDate.timeIntervalSinceNow - 15*60
+        let notDate = Date(timeIntervalSinceNow: salahNotTime)
+        if salahNotTime > 0, !salah.loc.isEmpty, notificationsCount < maxNotificationLimit {
+            try? await LocalNotifications.shared.scheduleNotification(
+                content: AnyNotificationContent(
+                    title: "\(salah.name) @\(salah.loc) in 15 mins",
+                    body: "حَيَّ عَلَىٰ ٱلْفَلَاحِ",
+                    sound: Global.shared.soundOn,
+                    badge: nil
+                ),
+                trigger: .time(timeInterval: salahNotTime, repeats: false)
+            )
+            notificationsCount += 1
+        }
+    }
     
     /// Requests the user’s authorization to allow local and remote notifications for your app.
     @discardableResult func requestAuthorization(options: UNAuthorizationOptions = [.alert, .sound, .badge]) async throws -> Bool {

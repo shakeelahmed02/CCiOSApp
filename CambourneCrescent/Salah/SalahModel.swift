@@ -19,5 +19,23 @@ struct SalahModel: Codable {
     let loc: String
     let sun: String
     let name: String
-    
+}
+
+extension SalahModel {
+    func salahName(day: String) -> String {
+        switch name.lowercased() {
+        case "fajr":
+            return "Fajr"
+        case "dhohr":
+            return day.lowercased() == "fri" ? "Jummah" : "Dhuhr"
+        case "asr":
+            return "Asr"
+        case "magrib":
+            return "Maghrib"
+        case "isha":
+            return "Isha"
+        default:
+            return "Salah"
+        }
+    }
 }

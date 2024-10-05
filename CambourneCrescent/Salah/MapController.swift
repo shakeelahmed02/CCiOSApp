@@ -28,6 +28,8 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
 
         // Do any additional setup after loading the view.
         
+        navigationItem.title = "Salah Location"
+      
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.requestWhenInUseAuthorization()
