@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1hb-aZ-KEe">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -90,15 +91,15 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SalahCell" id="aDo-Ck-i4F" customClass="SalahCell" customModule="CambourneCrescent" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="102.66666412353516"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FajrSalahCell" id="aDo-Ck-i4F" customClass="SalahCell" customModule="CambourneCrescent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="173.33332824707031"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aDo-Ck-i4F" id="Csj-LN-Uih">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="102.66666412353516"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="173.33332824707031"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVX-zv-Hwl">
-                                                    <rect key="frame" x="12" y="8" width="369" height="86.666666666666671"/>
+                                                    <rect key="frame" x="12" y="8" width="369" height="157.33333333333334"/>
                                                     <color key="backgroundColor" red="0.1176470588" green="0.4823529412" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -112,14 +113,20 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="03:45 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hQ-xC-xJY">
-                                                    <rect key="frame" x="36" y="55.333333333333336" width="106" height="27.333333333333336"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starts: 05:56" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhm-wU-bkM">
+                                                    <rect key="frame" x="36" y="55.333333333333336" width="137" height="27.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HUB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhm-wU-bkM">
-                                                    <rect key="frame" x="307.33333333333331" y="37.666666666666664" width="53.666666666666686" height="27.333333333333336"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Jamaat: 06:15 @ NCP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJb-k6-RGA">
+                                                    <rect key="frame" x="35.999999999999986" y="90.666666666666671" width="232.66666666666663" height="27.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Sunrise: 07.30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hQ-xC-xJY">
+                                                    <rect key="frame" x="36" y="125.99999999999999" width="155" height="27.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -128,27 +135,135 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="3hQ-xC-xJY" secondAttribute="bottom" constant="8" id="4F6-l8-4XF"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zhm-wU-bkM" secondAttribute="trailing" constant="12" id="5cd-34-ZVv"/>
+                                                <constraint firstItem="ZJb-k6-RGA" firstAttribute="leading" secondItem="Csj-LN-Uih" secondAttribute="leadingMargin" constant="16" id="78n-HE-ZTK"/>
                                                 <constraint firstAttribute="bottom" secondItem="SVX-zv-Hwl" secondAttribute="bottom" constant="8" id="Dtc-Vt-vU4"/>
                                                 <constraint firstItem="SVX-zv-Hwl" firstAttribute="leading" secondItem="Csj-LN-Uih" secondAttribute="leading" constant="12" id="Ku8-Nb-ArC"/>
                                                 <constraint firstItem="3hQ-xC-xJY" firstAttribute="leading" secondItem="Csj-LN-Uih" secondAttribute="leadingMargin" constant="16" id="Lp8-b6-4EF"/>
+                                                <constraint firstItem="ZJb-k6-RGA" firstAttribute="top" secondItem="zhm-wU-bkM" secondAttribute="bottom" constant="8" id="Mdk-zM-Ddx"/>
                                                 <constraint firstItem="NMH-3r-VpF" firstAttribute="leading" secondItem="Csj-LN-Uih" secondAttribute="leadingMargin" constant="16" id="Ohe-Cy-dMj"/>
+                                                <constraint firstItem="zhm-wU-bkM" firstAttribute="top" secondItem="NMH-3r-VpF" secondAttribute="bottom" constant="8" id="OlT-e2-2oB"/>
                                                 <constraint firstItem="SVX-zv-Hwl" firstAttribute="top" secondItem="Csj-LN-Uih" secondAttribute="top" constant="8" id="RrV-px-UPB"/>
                                                 <constraint firstAttribute="trailing" secondItem="SVX-zv-Hwl" secondAttribute="trailing" constant="12" id="ale-lZ-Cdp"/>
-                                                <constraint firstItem="zhm-wU-bkM" firstAttribute="centerY" secondItem="Csj-LN-Uih" secondAttribute="centerY" id="gWX-eK-tSe"/>
+                                                <constraint firstItem="zhm-wU-bkM" firstAttribute="leading" secondItem="Csj-LN-Uih" secondAttribute="leadingMargin" constant="16" id="mhW-dy-mWq"/>
+                                                <constraint firstItem="3hQ-xC-xJY" firstAttribute="top" secondItem="ZJb-k6-RGA" secondAttribute="bottom" constant="8" id="qbv-nm-org"/>
                                                 <constraint firstItem="NMH-3r-VpF" firstAttribute="top" secondItem="Csj-LN-Uih" secondAttribute="topMargin" constant="8" id="ttP-Se-oVE"/>
-                                                <constraint firstItem="3hQ-xC-xJY" firstAttribute="top" secondItem="NMH-3r-VpF" secondAttribute="bottom" constant="8" id="wgH-fr-iaI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="nameLabel" destination="NMH-3r-VpF" id="maB-4V-1xa"/>
-                                            <outlet property="timeLabel" destination="zhm-wU-bkM" id="xce-lC-0O9"/>
-                                            <outlet property="venueLabel" destination="3hQ-xC-xJY" id="RWZ-ca-0PR"/>
+                                            <outlet property="jamaatTimeLabel" destination="ZJb-k6-RGA" id="MQ2-YL-lSL"/>
+                                            <outlet property="nameLabel" destination="NMH-3r-VpF" id="gku-Mr-VcQ"/>
+                                            <outlet property="startTimeLabel" destination="zhm-wU-bkM" id="RGV-YA-3Uq"/>
+                                            <outlet property="sunriseTimeLabel" destination="3hQ-xC-xJY" id="N8d-9W-nvE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="JamaatSalahCell" id="6ob-kL-TgM" customClass="SalahCell" customModule="CambourneCrescent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="223.33332824707031" width="393" height="138"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ob-kL-TgM" id="ru8-1u-phs">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="138"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6p-lt-ARh">
+                                                    <rect key="frame" x="12" y="8" width="369" height="122"/>
+                                                    <color key="backgroundColor" red="0.1176470588" green="0.4823529412" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fajar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDS-p3-hRJ">
+                                                    <rect key="frame" x="36" y="20" width="55" height="27.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starts: 05:56" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTc-Gf-xWo">
+                                                    <rect key="frame" x="36" y="55.333333333333336" width="137" height="27.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Jamaat: 06:15 @ NCP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoH-cM-ueg">
+                                                    <rect key="frame" x="35.999999999999986" y="90.666666666666671" width="232.66666666666663" height="27.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="e6p-lt-ARh" firstAttribute="leading" secondItem="ru8-1u-phs" secondAttribute="leading" constant="12" id="0EM-wC-WOM"/>
+                                                <constraint firstItem="nDS-p3-hRJ" firstAttribute="leading" secondItem="ru8-1u-phs" secondAttribute="leadingMargin" constant="16" id="5mm-3Y-cnk"/>
+                                                <constraint firstItem="RTc-Gf-xWo" firstAttribute="leading" secondItem="ru8-1u-phs" secondAttribute="leadingMargin" constant="16" id="CFS-dC-2mu"/>
+                                                <constraint firstItem="RTc-Gf-xWo" firstAttribute="top" secondItem="nDS-p3-hRJ" secondAttribute="bottom" constant="8" id="LGA-L3-FVG"/>
+                                                <constraint firstItem="BoH-cM-ueg" firstAttribute="leading" secondItem="ru8-1u-phs" secondAttribute="leadingMargin" constant="16" id="LHE-Sd-fAU"/>
+                                                <constraint firstAttribute="bottom" secondItem="e6p-lt-ARh" secondAttribute="bottom" constant="8" id="RG8-TW-Ju1"/>
+                                                <constraint firstAttribute="trailing" secondItem="e6p-lt-ARh" secondAttribute="trailing" constant="12" id="XGO-Q1-WJv"/>
+                                                <constraint firstItem="nDS-p3-hRJ" firstAttribute="top" secondItem="ru8-1u-phs" secondAttribute="topMargin" constant="8" id="Xc0-DF-OD8"/>
+                                                <constraint firstItem="BoH-cM-ueg" firstAttribute="top" secondItem="RTc-Gf-xWo" secondAttribute="bottom" constant="8" id="dTn-03-9RS"/>
+                                                <constraint firstItem="e6p-lt-ARh" firstAttribute="top" secondItem="ru8-1u-phs" secondAttribute="top" constant="8" id="l7W-Yt-7Vh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BoH-cM-ueg" secondAttribute="bottom" constant="8" id="vNl-fK-BZs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="jamaatTimeLabel" destination="BoH-cM-ueg" id="M7b-Yv-Po5"/>
+                                            <outlet property="nameLabel" destination="nDS-p3-hRJ" id="678-mj-BFX"/>
+                                            <outlet property="startTimeLabel" destination="RTc-Gf-xWo" id="HeH-Us-H0X"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SalahCell" id="FUf-lB-xjC" customClass="SalahCell" customModule="CambourneCrescent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="361.33332824707031" width="393" height="102.66666412353516"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FUf-lB-xjC" id="Q7X-tB-LjV">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="102.66666412353516"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIL-ko-f5l">
+                                                    <rect key="frame" x="12" y="8" width="369" height="86.666666666666671"/>
+                                                    <color key="backgroundColor" red="0.1176470588" green="0.4823529412" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fajar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJb-12-gOn">
+                                                    <rect key="frame" x="36" y="20" width="55" height="27.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starts: 05:56" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdm-s4-QgV">
+                                                    <rect key="frame" x="36" y="55.333333333333336" width="137" height="27.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="NJb-12-gOn" firstAttribute="leading" secondItem="Q7X-tB-LjV" secondAttribute="leadingMargin" constant="16" id="473-Qy-nf9"/>
+                                                <constraint firstItem="Pdm-s4-QgV" firstAttribute="top" secondItem="NJb-12-gOn" secondAttribute="bottom" constant="8" id="5q4-LK-AMI"/>
+                                                <constraint firstItem="dIL-ko-f5l" firstAttribute="leading" secondItem="Q7X-tB-LjV" secondAttribute="leading" constant="12" id="OvY-ab-2XY"/>
+                                                <constraint firstAttribute="bottom" secondItem="dIL-ko-f5l" secondAttribute="bottom" constant="8" id="SDV-lA-kOO"/>
+                                                <constraint firstAttribute="trailing" secondItem="dIL-ko-f5l" secondAttribute="trailing" constant="12" id="WKw-Ls-cse"/>
+                                                <constraint firstItem="dIL-ko-f5l" firstAttribute="top" secondItem="Q7X-tB-LjV" secondAttribute="top" constant="8" id="cPV-aS-u8R"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Pdm-s4-QgV" secondAttribute="bottom" constant="8" id="f6M-Zy-psb"/>
+                                                <constraint firstItem="Pdm-s4-QgV" firstAttribute="leading" secondItem="Q7X-tB-LjV" secondAttribute="leadingMargin" constant="16" id="fKS-An-Igu"/>
+                                                <constraint firstItem="NJb-12-gOn" firstAttribute="top" secondItem="Q7X-tB-LjV" secondAttribute="topMargin" constant="8" id="nlQ-Oc-4N6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="NJb-12-gOn" id="GlZ-x9-cjs"/>
+                                            <outlet property="startTimeLabel" destination="Pdm-s4-QgV" id="Yia-Eq-U4V"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionHeaderCell" id="mDq-Sr-b0i">
-                                        <rect key="frame" x="0.0" y="152.66666412353516" width="393" height="67.333335876464844"/>
+                                        <rect key="frame" x="0.0" y="463.99999237060547" width="393" height="67.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mDq-Sr-b0i" id="DOq-iE-vQf">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="67.333335876464844"/>

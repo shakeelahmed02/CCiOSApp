@@ -14,6 +14,7 @@ class SalahController: UIViewController, UITableViewDelegate, UITableViewDataSou
     private var datasource = [SalahAPIResponse]()
     private let maxNotificationLimit = 63
     private var notificationsCount = 1
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,17 +27,38 @@ class SalahController: UIViewController, UITableViewDelegate, UITableViewDataSou
                 print(error.localizedDescription)
             }
         }
-        addActivity()
-        Task(priority: .background) {
-            datasource = await Global.shared.getSalahTimings()
-            await LocalNotifications.shared.scheduleNotificaitons()
-            Task { @MainActor in
-                tableView.reloadData()
-                activity.stopAnimating()
-            }
+      NotificationCenter.default.addObserver(self, selector: #selector(load),  name: NSNotification.Name("loadSalah"), object: nil)
+      load()
+    }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    if !datasource.isEmpty {
+      scrollToToday()
+    }
+  }
+    
+  private func scrollToToday() {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd MMM"
+    let date = dateFormatter.string(from: Date())
+    if let index = datasource.firstIndex(where: { $0.date == date}) {
+      tableView.scrollToRow(at: IndexPath(item: 0, section: index), at: .top, animated: true)
+    }
+  }
+  
+  @objc func load() {
+    addActivity()
+    Task(priority: .background) {
+        datasource = await Global.shared.getSalahTimings()
+        await LocalNotifications.shared.scheduleNotificaitons()
+        Task { @MainActor in
+            tableView.reloadData()
+            activity.stopAnimating()
         }
     }
-    
+  }
+  
     private func addActivity() {
         
         view.addSubview(activity)
@@ -47,10 +69,6 @@ class SalahController: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     // MARK:- TableView
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         datasource.count
@@ -68,13 +86,23 @@ class SalahController: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SalahCell", for: indexPath) as! SalahCell
-        let section = datasource[indexPath.section]
-        let model = section.namaz[indexPath.row]
-        cell.nameLabel.text = model.salahName(day: section.day)
-        cell.venueLabel.text = model.loc.isEmpty ? "N/A" : "@\(model.loc)"
-        cell.timeLabel.text = model.jamat.isEmpty ? model.start : model.jamat
-        return cell
+      let cell: SalahCell
+      let section = datasource[indexPath.section]
+      let model = section.namaz[indexPath.row]
+      
+      if !model.jamat.isEmpty && !model.sun.isEmpty {
+        cell = tableView.dequeueReusableCell(withIdentifier: "FajrSalahCell", for: indexPath) as! SalahCell
+      } else if !model.jamat.isEmpty {
+        cell = tableView.dequeueReusableCell(withIdentifier: "JamaatSalahCell", for: indexPath) as! SalahCell
+      } else {
+        cell = tableView.dequeueReusableCell(withIdentifier: "SalahCell", for: indexPath) as! SalahCell
+      }
+      
+      cell.nameLabel?.text = model.salahName(day: section.day)
+      cell.startTimeLabel?.text = "Starts: \(model.start)"
+      cell.jamaatTimeLabel?.text = "Jamaat: \(model.jamat) @\(model.loc)"
+      cell.sunriseTimeLabel?.text = "Sunrise: \(model.sun)"
+      return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

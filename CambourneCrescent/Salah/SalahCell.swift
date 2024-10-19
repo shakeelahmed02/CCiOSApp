@@ -9,9 +9,10 @@ import UIKit
 
 class SalahCell: UITableViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var venueLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel?
+    @IBOutlet weak var startTimeLabel: UILabel?
+    @IBOutlet weak var jamaatTimeLabel: UILabel?
+    @IBOutlet weak var sunriseTimeLabel: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class DonationController: UIViewController {
+class DonationController: UIViewController, WKUIDelegate {
 
     @IBOutlet weak var webview: WKWebView!
     
@@ -16,11 +16,17 @@ class DonationController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+      webview.uiDelegate = self
         webview.load(URLRequest(url: (URL(string: "https://www.cambournecrescent.org/cambourne-mosque-project/")!)))
         navigationItem.title = "Mosque Project"
     }
     
-
+  func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+      if navigationAction.targetFrame == nil {
+          webView.load(navigationAction.request)
+      }
+      return nil
+  }
     /*
     // MARK: - Navigation
 

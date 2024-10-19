@@ -19,6 +19,24 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         case cvc
         case lcp
         case sp
+      
+      var title: String {
+        switch self {
+          
+        case .hub:
+          return "HUB"
+        case .NCP:
+          return "NCP"
+        case .BlueSchool:
+          return "Blue School"
+        case .cvc:
+          return "CVC"
+        case .lcp:
+          return "LCP"
+        case .sp:
+          return "Sports Pavilion"
+        }
+      }
     }
     
     public var location: Location = .hub
@@ -28,7 +46,7 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
 
         // Do any additional setup after loading the view.
         
-        navigationItem.title = "Salah Location"
+      navigationItem.title = location.title
       
         locationManager = CLLocationManager()
         locationManager?.delegate = self

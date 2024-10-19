@@ -78,11 +78,10 @@ final class LocalNotifications {
         let salahDateString = "\(salahDate) \(currentYear) \(salahTime)"
         guard let salahDate = dateFormatter.date(from: salahDateString) else { return }
         let salahNotTime = salahDate.timeIntervalSinceNow - 15*60
-        let notDate = Date(timeIntervalSinceNow: salahNotTime)
         if salahNotTime > 0, !salah.loc.isEmpty, notificationsCount < maxNotificationLimit {
             try? await LocalNotifications.shared.scheduleNotification(
                 content: AnyNotificationContent(
-                    title: "\(salah.name) @\(salah.loc) in 15 mins",
+                  title: "\(salah.name) @\(salah.loc) at \(salah.jamat)",
                     body: "حَيَّ عَلَىٰ ٱلْفَلَاحِ",
                     sound: Global.shared.soundOn,
                     badge: nil
