@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OneSignalFramework
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+      
+      
+      // OneSignal initialization
+       OneSignal.initialize("af6e5e64-7cdb-4098-95d1-bfe1988788fe", withLaunchOptions: launchOptions)
+       
+       // requestPermission will show the native iOS notification permission prompt.
+       OneSignal.Notifications.requestPermission({ accepted in
+         print("User accepted notifications: \(accepted)")
+       }, fallbackToSettings: true)
+      
         return true
     }
 

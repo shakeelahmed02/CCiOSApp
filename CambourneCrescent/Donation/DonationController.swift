@@ -22,9 +22,10 @@ class DonationController: UIViewController, WKUIDelegate {
     }
     
   func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-      if navigationAction.targetFrame == nil {
-          webView.load(navigationAction.request)
+    if let url = navigationAction.request.url?.absoluteURL {
+        UIApplication.shared.open(url, options: [:])
       }
+    
       return nil
   }
     /*
